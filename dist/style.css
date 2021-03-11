@@ -1,0 +1,159 @@
+body {
+  font-family: calibri;
+  line-height: 3rem;
+}
+
+.objective {
+    text-transform: uppercase;
+}
+.title-header {
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+
+.title-header .profile {
+  background-image: url(./assets/profile.jpg);
+  background-size: cover;
+  background-position: left;
+  margin: 2rem;
+  height: 350px;
+}
+
+.title-header * {
+  text-align: right;
+}
+
+.title-header h3 {
+  text-transform: uppercase;
+}
+
+.info {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+.basic-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  font-weight: 400;
+  font-size: 15px;
+  font-family: monospace;
+  margin: 1% auto;
+}
+
+.basic-detail-item {
+  flex-direction: row;
+  color: black;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.basic-detail-item span {
+  margin-left: 1rem;
+}
+
+.summary {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+h4::first-letter {
+    font-size: 200%;
+}
+
+.education-list {
+  list-style-type: none;
+}
+
+.education-list li {
+  position: relative;
+  margin: 0;
+  padding-bottom: 1em;
+  padding-left: 20px;
+  font-size: x-large;
+  line-height: normal;
+}
+
+.education-list li:before {
+  content: "";
+  background-color: silver;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 6px;
+  width: 3px;
+}
+
+.education-list li:after {
+  content: "";
+  background-image: url("./assets/circle-solid.svg");
+  position: absolute;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  top: 36px;
+}
+
+.skills-flex {
+  display: flex;
+  flex-flow: column wrap;
+  align-content: space-between;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+  padding: 20px;
+  width: 80%;
+  margin: 40px auto;
+  height: 309px;
+}
+
+.item {
+  width: auto;
+  position: relative;
+  margin-bottom: 2%;
+  border-radius: 3px;
+  background-color: #c0c0c0;
+  border: 1px solid transparent;
+  color: #000;
+  padding: 15px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Re-order items into 3 rows */
+.item:nth-of-type(4n + 1) {
+  order: 1;
+}
+.item:nth-of-type(4n + 2) {
+  order: 2;
+}
+.item:nth-of-type(4n + 3) {
+  order: 3;
+}
+.item:nth-of-type(4n) {
+  order: 4;
+}
+
+.item i span {
+  display: block;
+  font-size: small;
+  margin: 15px;
+  background-color: lightyellow;
+  font-family: monospace;
+  width: 40px;
+  border: none;
+  text-align: center;
+  box-shadow: 0px 1px 1px 0px #383838;
+}
+.break {
+  flex-basis: 100%;
+  width: 0;
+  border: 1px solid #ddd;
+  margin: 0;
+  content: "";
+  padding: 0;
+}
+
+hr {
+    margin: 10% auto;
+}
