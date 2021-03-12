@@ -3,28 +3,35 @@ body {
   line-height: 3rem;
 }
 
-.objective {
-    text-transform: uppercase;
-}
+
 .title-header {
   display: grid;
   grid-template-columns: 30% 70%;
+  margin-bottom: 10%;
 }
 
 .title-header .profile {
-  background-image: url(./assets/profile.jpg);
+  /* background-image: url(./assets/profile.jpg); */
   background-size: cover;
   background-position: left;
-  margin: 2rem;
-  height: 350px;
+  margin: 0 2rem 0 0;
+  /* box-shadow: 0px 4px 6px 3px grey; */
 }
 
 .title-header * {
   text-align: right;
 }
 
-.title-header h3 {
+.title-header h1, h3 {
+  margin-top: 0;
   text-transform: uppercase;
+  font-size: 2rem;
+}
+.title-header h1 {
+  font-size: 6rem;
+}
+.title-header h3 {
+  font-size: 2rem;
 }
 
 .info {
@@ -42,11 +49,8 @@ body {
 }
 
 .basic-detail-item {
-  flex-direction: row;
   color: black;
   margin-bottom: 1rem;
-  display: flex;
-  justify-content: space-evenly;
 }
 
 .basic-detail-item span {
@@ -60,6 +64,12 @@ body {
 
 h4::first-letter {
     font-size: 200%;
+    font-family: consolas;
+}
+
+.objective {
+  text-transform: uppercase;
+  margin-bottom: 5rem;
 }
 
 .education-list {
@@ -77,22 +87,24 @@ h4::first-letter {
 
 .education-list li:before {
   content: "";
-  background-color: silver;
+  background-color: gray;
   position: absolute;
   bottom: 0;
   top: 0;
-  left: 6px;
-  width: 3px;
+  left: 7px;
+  width: 1px;
 }
 
 .education-list li:after {
   content: "";
-  background-image: url("./assets/circle-solid.svg");
   position: absolute;
   left: 0;
   height: 15px;
   width: 15px;
   top: 36px;
+  background-color: #000;
+  border: 2px solid white;
+  border-radius: 2rem;
 }
 
 .skills-flex {

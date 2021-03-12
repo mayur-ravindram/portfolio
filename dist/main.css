@@ -86,7 +86,7 @@ body.typora-export {
 .typora-export .task-list-item input {
   pointer-events: none;
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 375px) {
   body.typora-export {
     padding-left: 0px;
     padding-right: 0px;
