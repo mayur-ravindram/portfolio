@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | System Architect & Designer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #050505;
+            --card: rgba(18, 18, 18, 0.7);
+            --border: rgba(255, 255, 255, 0.08);
+            --accent: #ffffff;
+            --code: #a1a1aa;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--accent);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .serif { font-family: 'Instrument Serif', serif; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+
+        .glass {
+            background: var(--card);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+        }
+
+        .bento-card {
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.2, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .bento-card:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(15px);
+            transition: all 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .dot-grid {
+            background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background: #4ade80;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.8; }
+        }
+
+        .marquee-container {
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-scroll {
+            animation: scroll 25s linear infinite;
+        }
+        
+        /* Custom UI Flow logic: remove standard anchor jump */
+        .nav-link.active {
+            color: white;
+            background: rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="selection:bg-white selection:text-black">
+
+    <!-- Navbar -->
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-lg">
+        <div class="glass px-2 py-2 rounded-full flex justify-between items-center shadow-2xl">
+            <div class="ml-4 font-bold tracking-tighter mono text-sm">ARCH_01<span class="text-zinc-600">.LOG</span></div>
+            <div class="flex gap-1 text-[10px] font-bold uppercase tracking-widest">
+                <button data-target="work" class="nav-link px-4 py-2 hover:text-white text-zinc-500 transition-all rounded-full">Work</button>
+                <button data-target="about" class="nav-link px-4 py-2 hover:text-white text-zinc-500 transition-all rounded-full">About</button>
+                <button onclick="toggleModal()" class="px-5 py-2 bg-white text-black rounded-full hover:bg-zinc-200 transition-all ml-2">Connect</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-6xl mx-auto px-6 pt-32 pb-20">
+        
+        <!-- Hero -->
+        <header id="home" class="mb-24 reveal">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="pulse-dot"></div>
+                <span class="mono text-[10px] text-zinc-500 uppercase tracking-widest">System Status: Active // Latency: 14ms</span>
+            </div>
+            <h1 class="text-6xl md:text-[110px] serif italic leading-[0.8] mb-8 tracking-tighter">
+                Engineering <br>
+                <span class="text-zinc-700">elegant logic.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-zinc-400 max-w-2xl leading-relaxed font-light">
+                Freelance Senior Designer specializing in high-performance digital architecture. I transform complex data structures into intuitive user interfaces.
+            </p>
+        </header>
+
+        <!-- Bento Grid -->
+        <main id="work" class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            
+            <!-- Bio / About Block -->
+            <div id="about" class="bento-card glass p-8 col-span-1 md:col-span-2 row-span-1 flex flex-col justify-between reveal group">
+                <div class="flex justify-between items-start">
+                    <span class="mono text-[10px] text-zinc-600 uppercase">Profile_01</span>
+                    <div class="w-10 h-10 rounded-xl bg-zinc-800 flex items-center justify-center mono text-xs text-white">AT</div>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-medium mb-3">Alex Thorne</h2>
+                    <p class="text-sm text-zinc-500 leading-relaxed max-w-xs">
+                        A multidisciplinary architect focused on building the connective tissue between human psychology and technical systems. Currently based in London.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tech Stack Block -->
+            <div class="bento-card glass p-8 col-span-1 md:col-span-2 reveal overflow-hidden">
+                <span class="mono text-[10px] text-zinc-600 uppercase mb-8 block">Dependencies</span>
+                <div class="marquee-container overflow-hidden">
+                    <div class="flex animate-scroll whitespace-nowrap">
+                        <div class="flex gap-12 items-center mono text-xs uppercase text-zinc-500">
+                            <span>React_18.3</span>
+                            <span>TypeScript</span>
+                            <span>Next_JS</span>
+                            <span>Tailwind_CSS</span>
+                            <span>Three_JS</span>
+                            <span>Figma</span>
+                            <span>Node_JS</span>
+                            <!-- Duplicate for loop -->
+                            <span>React_18.3</span>
+                            <span>TypeScript</span>
+                            <span>Next_JS</span>
+                            <span>Tailwind_CSS</span>
+                            <span>Three_JS</span>
+                            <span>Figma</span>
+                            <span>Node_JS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Primary Project -->
+            <div class="bento-card glass col-span-1 md:col-span-3 row-span-2 reveal group cursor-pointer dot-grid min-h-[500px]">
+                <div class="absolute inset-0 opacity-20 pointer-events-none overflow-hidden">
+                    <svg width="100%" height="100%" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 500 L800 100" stroke="white" stroke-width="0.5" />
+                        <path d="M0 550 L800 150" stroke="white" stroke-width="0.5" />
+                        <circle cx="600" cy="200" r="120" stroke="white" stroke-width="0.5" />
+                        <rect x="550" y="150" width="100" height="100" stroke="white" stroke-width="0.5" />
+                    </svg>
+                </div>
+                <div class="relative z-10 p-10 h-full flex flex-col justify-between">
+                    <div class="flex justify-between items-start">
+                        <div class="flex gap-2 mono text-[9px] uppercase">
+                            <span class="px-2 py-1 bg-white/5 border border-white/10 rounded">Fintech_V2</span>
+                            <span class="px-2 py-1 bg-white/5 border border-white/10 rounded">Architecture</span>
+                        </div>
+                        <div class="w-12 h-12 bg-white text-black rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all translate-y-2 group-hover:translate-y-0 shadow-xl">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-6xl serif italic tracking-tighter mb-4">Vortex.AI</h3>
+                        <p class="text-zinc-500 max-w-md text-sm leading-relaxed">
+                            Developing a predictive analytics dashboard for algorithmic trading firms. Bridging sub-millisecond data with human-readable visualizations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Links Block -->
+            <div class="bento-card glass p-8 col-span-1 reveal flex flex-col justify-between">
+                <span class="mono text-[10px] text-zinc-600 uppercase">Links</span>
+                <div class="space-y-4 mt-8">
+                    <a href="#" class="flex justify-between items-center group/link">
+                        <span class="text-sm">Twitter</span>
+                        <span class="mono text-[10px] text-zinc-600 group-hover/link:text-white transition-colors">@ALX_TH</span>
+                    </a>
+                    <a href="#" class="flex justify-between items-center group/link">
+                        <span class="text-sm">LinkedIn</span>
+                        <span class="mono text-[10px] text-zinc-600 group-hover/link:text-white transition-colors">IN/ALEX_T</span>
+                    </a>
+                    <a href="#" class="flex justify-between items-center group/link">
+                        <span class="text-sm">Read.cv</span>
+                        <span class="mono text-[10px] text-zinc-600 group-hover/link:text-white transition-colors">CV_2026</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Small Status Card -->
+            <div class="bento-card glass p-8 col-span-1 reveal bg-zinc-900/40">
+                <span class="mono text-[10px] text-zinc-600 uppercase mb-4 block">Location</span>
+                <p class="text-sm mono text-zinc-300">LON // 51.5072° N, 0.1276° W</p>
+            </div>
+
+            <!-- Secondary Project -->
+            <div class="bento-card glass col-span-1 md:col-span-2 p-8 reveal group cursor-pointer overflow-hidden min-h-[300px] flex flex-col justify-end">
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-900/10 to-transparent pointer-events-none"></div>
+                <div class="relative z-10">
+                    <span class="mono text-[10px] text-zinc-600 uppercase mb-2 block">System Design</span>
+                    <h3 class="text-3xl serif italic leading-none mb-2">Linear Scale</h3>
+                    <p class="text-zinc-500 text-xs">A unified component library for enterprise-scale web apps.</p>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="bento-card bg-white col-span-1 md:col-span-2 p-10 reveal flex flex-col md:flex-row items-center justify-between group cursor-pointer transition-all hover:bg-zinc-200" onclick="toggleModal()">
+                <div class="text-black mb-6 md:mb-0">
+                    <h4 class="text-4xl serif italic leading-none mb-2 tracking-tighter">Initialize project?</h4>
+                    <p class="text-zinc-500 mono text-[10px] font-bold uppercase">Ready for transmission_</p>
+                </div>
+                <div class="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center group-hover:rotate-45 transition-transform duration-500">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </div>
+            </div>
+
+        </main>
+
+        <footer class="mt-40 py-10 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="mono text-[9px] text-zinc-700 tracking-[0.3em]">
+                &copy; 2026 DESIGN_SYSTEMS_CORE_MOD
+            </div>
+            <div class="flex gap-10">
+                <button class="mono text-[9px] text-zinc-500 hover:text-white transition-colors" onclick="copyEmail()">COPY_EMAIL</button>
+                <a href="#" class="mono text-[9px] text-zinc-500 hover:text-white transition-colors uppercase">View_Source</a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Contact Modal -->
+    <div id="contact-modal" class="fixed inset-0 z-[100] hidden">
+        <div class="absolute inset-0 bg-black/70 backdrop-blur-3xl" onclick="toggleModal()"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-lg p-6">
+            <div class="glass p-10 rounded-[40px] shadow-2xl animate-in fade-in zoom-in duration-500">
+                <div class="flex justify-between items-start mb-10">
+                    <div>
+                        <span class="mono text-[10px] text-zinc-500 uppercase block mb-1">Transmission_01</span>
+                        <h2 class="text-5xl serif italic">Connect.</h2>
+                    </div>
+                    <button onclick="toggleModal()" class="text-zinc-500 hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </button>
+                </div>
+                <form class="space-y-3">
+                    <input type="text" placeholder="IDENTITY_NAME" class="mono bg-white/5 border border-white/10 p-4 rounded-2xl w-full text-[10px] focus:outline-none focus:border-white/30 transition-colors uppercase">
+                    <input type="email" placeholder="EMAIL_ADDR" class="mono bg-white/5 border border-white/10 p-4 rounded-2xl w-full text-[10px] focus:outline-none focus:border-white/30 transition-colors uppercase">
+                    <textarea placeholder="MESSAGE_CONTENT..." rows="4" class="mono bg-white/5 border border-white/10 p-4 rounded-2xl w-full text-[10px] focus:outline-none focus:border-white/30 transition-colors uppercase"></textarea>
+                    <button type="submit" class="w-full bg-white text-black py-4 rounded-full font-bold hover:bg-zinc-200 transition-all active:scale-95 mono text-xs uppercase">Submit_Request</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Fix for Navigation Flow - Robust Smooth Scroll
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                const targetId = link.getAttribute('data-target');
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100, // Offset for fixed nav
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update active state
+                    document.querySelectorAll('.nav-link').forEach(btn => btn.classList.remove('active'));
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Intersection Observer for Entrance Reveal
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // Modal State
+        function toggleModal() {
+            const modal = document.getElementById('contact-modal');
+            const isHidden = modal.classList.contains('hidden');
+            modal.classList.toggle('hidden');
+            document.body.style.overflow = isHidden ? 'hidden' : 'auto';
+        }
+
+        // Copy Email to Clipboard (No nonsense UX)
+        function copyEmail() {
+            const email = "hello@alexthorne.design";
+            const el = document.createElement('textarea');
+            el.value = email;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+            
+            const btn = event.target;
+            const originalText = btn.innerText;
+            btn.innerText = "COPIED_TO_CLIPBOARD";
+            btn.classList.add('text-white');
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.classList.remove('text-white');
+            }, 2000);
+        }
+
+        // Escape Key Modal Close
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                document.getElementById('contact-modal').classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
+</body>
+</html>
+
