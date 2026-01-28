@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mayur Ravindra | Deadly Minimalist & Architect</title>
+    <title>Mayur Ravindra | Java Backend Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,6 @@
             --card: rgba(18, 18, 18, 0.7);
             --border: rgba(255, 255, 255, 0.08);
             --accent: #ffffff;
-            --code: #a1a1aa;
         }
 
         body {
@@ -57,17 +56,12 @@
             transform: translateY(0);
         }
 
-        .dot-grid {
-            background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
-            background-size: 20px 20px;
-        }
-
         .pulse-dot {
             width: 8px;
             height: 8px;
-            background: #ffffff;
+            background: #4ade80;
             border-radius: 50%;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 10px rgba(74, 222, 128, 0.6);
             animation: pulse 2s infinite;
         }
 
@@ -77,18 +71,15 @@
             100% { transform: scale(0.95); opacity: 0.8; }
         }
 
-        .marquee-container {
-            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        .animate-scroll {
+            animation: scroll 40s linear infinite;
         }
 
         @keyframes scroll {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
-        .animate-scroll {
-            animation: scroll 35s linear infinite;
-        }
-        
+
         .nav-link.active {
             color: white;
             background: rgba(255, 255, 255, 0.05);
@@ -100,10 +91,11 @@
     <!-- Navbar -->
     <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-lg">
         <div class="glass px-2 py-2 rounded-full flex justify-between items-center shadow-2xl">
-            <div class="ml-4 font-bold tracking-tighter mono text-[10px]">MR_SYS<span class="text-zinc-600">.V2</span></div>
+            <div class="ml-4 font-bold tracking-tighter mono text-[10px]">MAYUR<span class="text-zinc-600">.ENG</span></div>
             <div class="flex gap-1 text-[10px] font-bold uppercase tracking-widest">
-                <button data-target="work" class="nav-link px-4 py-2 hover:text-white text-zinc-500 transition-all rounded-full">Archive</button>
-                <button data-target="about" class="nav-link px-4 py-2 hover:text-white text-zinc-500 transition-all rounded-full">Bio</button>
+                <button data-target="work" class="nav-link px-4 py-2 hover:text-white text-zinc-500 transition-all rounded-full">Work</button>
+                <button data-target="bio" class="nav-link px-4 py-2 hover:text-white text-zinc-500 transition-all rounded-full">Bio</button>
+                <button data-target="interests" class="nav-link px-4 py-2 hover:text-white text-zinc-500 transition-all rounded-full">Personal</button>
                 <button onclick="toggleModal()" class="px-5 py-2 bg-white text-black rounded-full hover:bg-zinc-200 transition-all ml-2">Contact</button>
             </div>
         </div>
@@ -115,172 +107,157 @@
         <header id="home" class="mb-24 reveal">
             <div class="flex items-center gap-3 mb-6">
                 <div class="pulse-dot"></div>
-                <span class="mono text-[10px] text-zinc-500 uppercase tracking-widest">Deadly Minimalist // Mumbai // Red Pill Enabled</span>
+                <span class="mono text-[10px] text-zinc-500 uppercase tracking-widest"> Software Engineer. // Mumbai, India</span>
             </div>
             <h1 class="text-6xl md:text-[110px] serif italic leading-[0.8] mb-8 tracking-tighter">
                 Mayur <br>
                 <span class="text-zinc-700">Ravindra.</span>
             </h1>
             <p class="text-lg md:text-xl text-zinc-400 max-w-2xl leading-relaxed font-light">
-                Architecting digital silence. I design high-performance systems and minimal utilities for clients and developers who value logic over noise.
+                Java Backend Engineer with nearly a decade of experience building scalable enterprise solutions. Specializing in Spring Boot, Microservices, and Cloud infrastructure.
             </p>
         </header>
 
         <!-- Bento Grid -->
-        <main id="work" class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <main class="grid grid-cols-1 md:grid-cols-4 gap-4">
             
-            <!-- Bio / About Block -->
-            <div id="about" class="bento-card glass p-8 col-span-1 md:col-span-2 row-span-2 flex flex-col justify-between reveal group">
-                <div class="flex justify-between items-start">
-                    <span class="mono text-[10px] text-zinc-600 uppercase">Identity_Core</span>
+            <!-- Bio Section -->
+            <div id="bio" class="bento-card glass p-8 col-span-1 md:col-span-2 row-span-1 flex flex-col justify-between reveal">
+                <div class="flex justify-between items-start mb-12">
+                    <span class="mono text-[10px] text-zinc-600 uppercase">Identity_01</span>
                     <div class="w-10 h-10 rounded-xl bg-zinc-800 flex items-center justify-center mono text-xs text-white">MR</div>
                 </div>
-                <div class="space-y-6">
-                    <h2 class="text-3xl serif italic leading-tight">Reader, Rider, <br>Husband, Father.</h2>
+                <div>
+                    <h2 class="text-2xl font-medium mb-4">Engineer, Father, Minimalist.</h2>
                     <p class="text-sm text-zinc-500 leading-relaxed">
-                        Driven by deep-seated interests in space exploration, emerging tech, and ancient philosophy. 
-                        A devotee of the <span class="text-white">Deadly Minimalist</span> school of thought. 
-                        Inspired by the narrative precision of <span class="italic">Matrix</span>, the grit of <span class="italic">Breaking Bad</span>, and the mythology of <span class="italic">Star Wars</span>.
+                        Based in Mumbai, I balance a rigorous technical career with a focus on family and personal growth. I believe in clean code, practical architecture, and removing unnecessary complexity from both software and life.
                     </p>
-                    <div class="flex gap-2 mono text-[9px] text-zinc-600 uppercase">
-                        <span class="px-2 py-1 border border-white/5 rounded">Philosophy</span>
-                        <span class="px-2 py-1 border border-white/5 rounded">Cosmos</span>
-                        <span class="px-2 py-1 border border-white/5 rounded">Minimalism</span>
-                    </div>
                 </div>
             </div>
 
-            <!-- Project 1: Family Hearth (Social) -->
-            <div class="bento-card glass p-8 col-span-1 md:col-span-2 reveal group cursor-pointer dot-grid">
-                <div class="flex justify-between items-start mb-12">
-                    <span class="mono text-[10px] text-zinc-600 uppercase">Family_Hearth_01</span>
-                    <svg class="w-4 h-4 text-zinc-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                </div>
-                <h3 class="text-2xl font-medium mb-2">Family Hearth</h3>
-                <p class="text-xs text-zinc-500 leading-relaxed">A private, high-signal social network designed specifically for the modern family unit. Communication without the noise.</p>
-            </div>
-
-            <!-- Project 2: Eggspress (Utility) -->
-            <div class="bento-card glass p-8 col-span-1 md:col-span-1 reveal group cursor-pointer">
+            <!-- Professional Resume Section -->
+            <div id="work" class="bento-card glass p-8 col-span-1 md:col-span-2 row-span-2 reveal">
                 <div class="flex justify-between items-start mb-8">
-                    <span class="mono text-[10px] text-zinc-600 uppercase">Util_02</span>
+                    <span class="mono text-[10px] text-zinc-600 uppercase">Professional_Experience</span>
                 </div>
-                <h3 class="text-xl font-medium mb-2">Eggspress</h3>
-                <p class="text-[11px] text-zinc-500 leading-relaxed">Frictionless pre-ordering system for poultry essentials. Streamlining morning logistics.</p>
-            </div>
-
-            <!-- Project 5: Mock Server (Developer Utilities) -->
-            <div class="bento-card glass p-8 col-span-1 md:col-span-1 reveal group cursor-pointer bg-zinc-900/40">
-                <div class="flex justify-between items-start mb-8">
-                    <span class="mono text-[10px] text-zinc-600 uppercase">Dev_Tool_05</span>
-                </div>
-                <h3 class="text-xl font-medium mb-2">Mock Server</h3>
-                <p class="text-[11px] text-zinc-500 leading-relaxed">Lightweight developer utilities for rapid API prototyping and testing environments.</p>
-            </div>
-
-            <!-- Project 4: Medusa Storefront (Commerce) -->
-            <div class="bento-card glass col-span-1 md:col-span-3 row-span-2 reveal group cursor-pointer dot-grid min-h-[400px]">
-                <div class="absolute inset-0 opacity-20 pointer-events-none overflow-hidden">
-                    <svg width="100%" height="100%" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="400" cy="300" r="200" stroke="white" stroke-width="0.5" stroke-dasharray="10 10" />
-                        <rect x="300" y="200" width="200" height="200" stroke="white" stroke-width="0.5" />
-                    </svg>
-                </div>
-                <div class="relative z-10 p-10 h-full flex flex-col justify-between">
-                    <div class="flex justify-between items-start">
-                        <div class="flex gap-2 mono text-[9px] uppercase">
-                            <span class="px-2 py-1 bg-white/5 border border-white/10 rounded">Client_Medusa</span>
-                            <span class="px-2 py-1 bg-white/5 border border-white/10 rounded">Headless_Commerce</span>
+                <div class="space-y-8">
+                    <div>
+                        <div class="flex justify-between items-end mb-1">
+                            <h3 class="text-sm font-bold">Coforge</h3>
+                            <span class="mono text-[9px] text-zinc-600 uppercase">2025 - Present</span>
                         </div>
-                        <div class="w-12 h-12 bg-white text-black rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all translate-y-2 group-hover:translate-y-0 shadow-xl">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                        </div>
+                        <p class="text-[11px] text-zinc-400 mb-2">Sr. Technical Lead</p>
+                        <p class="text-[11px] text-zinc-500 leading-relaxed">Enginnering and development for UK based Banco Santander. JDK 17, SpringBoot 4, Openshift.</p>
                     </div>
                     <div>
-                        <h3 class="text-6xl serif italic tracking-tighter mb-4">Medusa Storefront</h3>
-                        <p class="text-zinc-500 max-w-sm text-sm leading-relaxed">
-                            Bespoke e-commerce architecture built on Medusa. Focusing on sub-second load times and a checkout experience that feels invisible.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Social Links Block -->
-            <div class="bento-card glass p-8 col-span-1 reveal flex flex-col justify-between">
-                <span class="mono text-[10px] text-zinc-600 uppercase">Connect</span>
-                <div class="space-y-4 mt-8">
-                    <a href="https://twitter.com/mayurravindram" class="flex justify-between items-center group/link">
-                        <span class="text-sm">Twitter</span>
-                        <span class="mono text-[10px] text-zinc-600 group-hover/link:text-white transition-colors">↗</span>
-                    </a>
-                    <a href="https://linkedin.com/in/mayurravindram" class="flex justify-between items-center group/link">
-                        <span class="text-sm">LinkedIn</span>
-                        <span class="mono text-[10px] text-zinc-600 group-hover/link:text-white transition-colors">↗</span>
-                    </a>
-                    <a href="https://github.com/mayurravindram" class="flex justify-between items-center group/link">
-                        <span class="text-sm">GitHub</span>
-                        <span class="mono text-[10px] text-zinc-600 group-hover/link:text-white transition-colors">↗</span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Project 6: Minimal ASMR -->
-            <div class="bento-card glass p-8 col-span-1 reveal flex flex-col justify-between group cursor-pointer">
-                <div class="flex justify-between items-start">
-                    <span class="mono text-[10px] text-zinc-600 uppercase">App_06</span>
-                </div>
-                <div>
-                    <h3 class="text-xl font-medium mb-1">Minimal ASMR</h3>
-                    <p class="text-[10px] text-zinc-500">Pure sonic focus.</p>
-                </div>
-            </div>
-
-            <!-- Project 3: Agri Website -->
-            <div class="bento-card glass p-8 col-span-1 md:col-span-1 reveal bg-zinc-900/40 flex flex-col justify-between">
-                <span class="mono text-[10px] text-zinc-600 uppercase block">Client_Agri</span>
-                <h3 class="text-xl font-medium mt-4">Agri Web</h3>
-                <p class="text-[11px] text-zinc-500">Corporate presence for agricultural innovation.</p>
-            </div>
-
-            <!-- Location Status Card -->
-            <div class="bento-card glass p-8 col-span-1 md:col-span-1 reveal">
-                <span class="mono text-[10px] text-zinc-600 uppercase mb-4 block">Base_Loc</span>
-                <p class="text-sm mono text-zinc-300">MUM // 19.0760° N, 72.8777° E</p>
-                <p class="text-[10px] text-zinc-600 mt-1 uppercase">India</p>
-            </div>
-
-            <!-- Tech Stack Block -->
-            <div class="bento-card glass p-8 col-span-1 md:col-span-2 reveal overflow-hidden">
-                <span class="mono text-[10px] text-zinc-600 uppercase mb-8 block">Active_Stack</span>
-                <div class="marquee-container overflow-hidden">
-                    <div class="flex animate-scroll whitespace-nowrap">
-                        <div class="flex gap-12 items-center mono text-xs uppercase text-zinc-500">
-                            <span>Medusa_JS</span>
-                            <span>React_Next</span>
-                            <span>Node_Core</span>
-                            <span>PostgreSQL</span>
-                            <span>Tailwind_CSS</span>
-                            <span>Figma_Arch</span>
-                            <span>TypeScript</span>
-                            <span>Medusa_JS</span>
-                            <span>React_Next</span>
-                            <span>Node_Core</span>
-                            <span>PostgreSQL</span>
-                            <span>Tailwind_CSS</span>
-                            <span>Figma_Arch</span>
-                            <span>TypeScript</span>
+                        <div class="flex justify-between items-end mb-1">
+                            <h3 class="text-sm font-bold">Publicis Sapient</h3>
+                            <span class="mono text-[9px] text-zinc-600 uppercase">2022 — 2025</span>
                         </div>
+                        <p class="text-[11px] text-zinc-400 mb-2">Associate Sr. Software Developer</p>
+                        <p class="text-[11px] text-zinc-500 leading-relaxed">Leading backend development for UK banking products (Lloyds Banking Group). Architecting services using Java 17, Spring Boot 3.0, and GCP.</p>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-end mb-1">
+                            <h3 class="text-sm font-bold">Opus Consulting</h3>
+                            <span class="mono text-[9px] text-zinc-600 uppercase">2021 — 2022</span>
+                        </div>
+                        <p class="text-[11px] text-zinc-400 mb-2">Sr. Technical Engineer</p>
+                        <p class="text-[11px] text-zinc-500 leading-relaxed">Developed SaaS multi-tenant payment reconciliation suites using Java 8, MongoDB, and Kubernetes.</p>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-end mb-1">
+                            <h3 class="text-sm font-bold">TIAA India</h3>
+                            <span class="mono text-[9px] text-zinc-600 uppercase">2017 — 2021</span>
+                        </div>
+                        <p class="text-[11px] text-zinc-400 mb-2">Analyst Software Developer</p>
+                        <p class="text-[11px] text-zinc-500 leading-relaxed">Engineered internal payment platforms for brokerage and retirement products using Spring Batch and microservices.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Call to Action -->
-            <div class="bento-card bg-white col-span-1 md:col-span-2 p-10 reveal flex flex-col md:flex-row items-center justify-between group cursor-pointer transition-all hover:bg-zinc-200" onclick="toggleModal()">
+            <!-- Personal Projects Group -->
+            <div class="bento-card glass p-8 col-span-1 md:col-span-2 reveal">
+                <span class="mono text-[10px] text-zinc-600 uppercase mb-8 block">Project_Archive</span>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="group cursor-pointer">
+                        <h4 class="text-xs font-bold mb-1 group-hover:text-zinc-400 transition-colors">Family Hearth</h4>
+                        <p class="text-[10px] text-zinc-500">Private social network for family units.</p>
+                    </div>
+                    <div class="group cursor-pointer">
+                        <h4 class="text-xs font-bold mb-1 group-hover:text-zinc-400 transition-colors">Eggspress</h4>
+                        <p class="text-[10px] text-zinc-500">Logistics app for poultry pre-orders.</p>
+                    </div>
+                    <div class="group cursor-pointer">
+                        <h4 class="text-xs font-bold mb-1 group-hover:text-zinc-400 transition-colors">Medusa Storefront</h4>
+                        <p class="text-[10px] text-zinc-500">Headless e-commerce implementation.</p>
+                    </div>
+                    <div class="group cursor-pointer">
+                        <h4 class="text-xs font-bold mb-1 group-hover:text-zinc-400 transition-colors">Mock Utilities</h4>
+                        <p class="text-[10px] text-zinc-500">API prototyping tools for devs.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interests Section -->
+            <div id="interests" class="bento-card glass p-8 col-span-1 md:col-span-1 reveal flex flex-col justify-between">
+                <span class="mono text-[10px] text-zinc-600 uppercase">Interests</span>
+                <div class="mt-6 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <span class="text-lg">🏍️</span>
+                        <span class="text-[11px] font-medium">Long Distance Riding</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-lg">📚</span>
+                        <span class="text-[11px] font-medium">Philosophy & Tech Lit</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-lg">🌌</span>
+                        <span class="text-[11px] font-medium">Space Exploration</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Culture Section (Movies/Series) -->
+            <div class="bento-card glass p-8 col-span-1 md:col-span-1 reveal flex flex-col justify-between bg-zinc-900/30">
+                <span class="mono text-[10px] text-zinc-600 uppercase">Culture</span>
+                <div class="space-y-2 mt-4">
+                    <p class="text-[11px] mono text-zinc-400">01_STAR_WARS</p>
+                    <p class="text-[11px] mono text-zinc-400">02_THE_MATRIX</p>
+                    <p class="text-[11px] mono text-zinc-400">03_BREAKING_BAD</p>
+                </div>
+            </div>
+
+            <!-- Tech Stack Marquee -->
+            <div class="bento-card glass col-span-1 md:col-span-2 overflow-hidden flex items-center reveal h-20">
+                <div class="flex animate-scroll whitespace-nowrap px-4">
+                    <div class="flex gap-12 items-center mono text-[10px] uppercase text-zinc-600">
+                        <span>Java_17</span>
+                        <span class="text-white">Spring_Boot</span>
+                        <span>Microservices</span>
+                        <span class="text-white">Docker_K8s</span>
+                        <span>GCP_Cloud</span>
+                        <span class="text-white">MongoDB_MySQL</span>
+                        <span>React_Tailwind</span>
+                        <!-- Duplicate for loop -->
+                        <span>Java_17</span>
+                        <span class="text-white">Spring_Boot</span>
+                        <span>Microservices</span>
+                        <span class="text-white">Docker_K8s</span>
+                        <span>GCP_Cloud</span>
+                        <span class="text-white">MongoDB_MySQL</span>
+                        <span>React_Tailwind</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div id="contact" class="bento-card bg-white col-span-1 md:col-span-2 p-10 reveal flex flex-col md:flex-row items-center justify-between group cursor-pointer" onclick="toggleModal()">
                 <div class="text-black mb-6 md:mb-0">
                     <h4 class="text-4xl serif italic leading-none mb-2 tracking-tighter">Initialize project?</h4>
-                    <p class="text-zinc-500 mono text-[10px] font-bold uppercase">Ready for transmission_</p>
+                    <p class="text-zinc-500 mono text-[10px] font-bold uppercase">mayurravindram@gmail.com</p>
                 </div>
-                <div class="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center group-hover:rotate-45 transition-transform duration-500">
+                <div class="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center group-hover:rotate-45 transition-all">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                 </div>
             </div>
@@ -289,18 +266,19 @@
 
         <footer class="mt-40 py-10 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="mono text-[9px] text-zinc-700 tracking-[0.3em]">
-                &copy; 2026 MR_ARCHITECT_SYSTEMS
+                &copy; 2026 MAYUR RAVINDRA // SYSTEMS ARCHITECT
             </div>
             <div class="flex gap-10">
-                <button class="mono text-[9px] text-zinc-500 hover:text-white transition-colors uppercase" onclick="copyEmail()">Copy_Email</button>
-                <a href="#" class="mono text-[9px] text-zinc-500 hover:text-white transition-colors uppercase">View_Source</a>
+                <a href="https://linkedin.com/in/mayurravindram" class="mono text-[9px] text-zinc-500 hover:text-white transition-colors uppercase">LinkedIn</a>
+                <a href="https://github.com/mayurravindram" class="mono text-[9px] text-zinc-500 hover:text-white transition-colors uppercase">GitHub</a>
+                <button class="mono text-[9px] text-zinc-500 hover:text-white transition-colors uppercase" onclick="copyEmail()">Copy_Mail</button>
             </div>
         </footer>
     </div>
 
     <!-- Contact Modal -->
     <div id="contact-modal" class="fixed inset-0 z-[100] hidden">
-        <div class="absolute inset-0 bg-black/70 backdrop-blur-3xl" onclick="toggleModal()"></div>
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-3xl" onclick="toggleModal()"></div>
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-lg p-6">
             <div class="glass p-10 rounded-[40px] shadow-2xl animate-in fade-in zoom-in duration-500">
                 <div class="flex justify-between items-start mb-10">
@@ -308,15 +286,15 @@
                         <span class="mono text-[10px] text-zinc-500 uppercase block mb-1">Packet_Transmission</span>
                         <h2 class="text-5xl serif italic">Connect.</h2>
                     </div>
-                    <button onclick="toggleModal()" class="text-zinc-500 hover:text-white transition-colors">
+                    <button onclick="toggleModal()" class="text-zinc-500 hover:text-white">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                     </button>
                 </div>
                 <form class="space-y-3">
-                    <input type="text" placeholder="IDENTITY_NAME" class="mono bg-white/5 border border-white/10 p-4 rounded-2xl w-full text-[10px] focus:outline-none focus:border-white/30 transition-colors uppercase">
+                    <input type="text" placeholder="NAME_IDENTIFIER" class="mono bg-white/5 border border-white/10 p-4 rounded-2xl w-full text-[10px] focus:outline-none focus:border-white/30 transition-colors uppercase">
                     <input type="email" placeholder="EMAIL_ADDR" class="mono bg-white/5 border border-white/10 p-4 rounded-2xl w-full text-[10px] focus:outline-none focus:border-white/30 transition-colors uppercase">
-                    <textarea placeholder="MESSAGE_CONTENT..." rows="4" class="mono bg-white/5 border border-white/10 p-4 rounded-2xl w-full text-[10px] focus:outline-none focus:border-white/30 transition-colors uppercase"></textarea>
-                    <button type="submit" class="w-full bg-white text-black py-4 rounded-full font-bold hover:bg-zinc-200 transition-all active:scale-95 mono text-xs uppercase">Submit_Request</button>
+                    <textarea placeholder="PROJECT_QUERY..." rows="4" class="mono bg-white/5 border border-white/10 p-4 rounded-2xl w-full text-[10px] focus:outline-none focus:border-white/30 transition-colors uppercase"></textarea>
+                    <button type="submit" class="w-full bg-white text-black py-4 rounded-full font-bold hover:bg-zinc-200 transition-all mono text-xs uppercase">Submit_Packet</button>
                 </form>
             </div>
         </div>
@@ -331,7 +309,7 @@
                 
                 if (targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 100,
+                        top: targetElement.offsetTop - 120,
                         behavior: 'smooth'
                     });
                     
@@ -341,7 +319,7 @@
             });
         });
 
-        // Entrance Animations
+        // Entrance Reveal Observer
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -360,9 +338,9 @@
             document.body.style.overflow = isHidden ? 'hidden' : 'auto';
         }
 
-        // UX Helper: Copy Email
+        // Copy Email Logic
         function copyEmail() {
-            const email = "mayur@mayurravindram.com";
+            const email = "mayurravindram@gmail.com";
             const el = document.createElement('textarea');
             el.value = email;
             document.body.appendChild(el);
@@ -372,20 +350,13 @@
             
             const btn = event.target;
             const originalText = btn.innerText;
-            btn.innerText = "PACKET_COPIED";
+            btn.innerText = "COPIED_LOG";
             btn.classList.add('text-white');
             setTimeout(() => {
                 btn.innerText = originalText;
                 btn.classList.remove('text-white');
             }, 2000);
         }
-
-        window.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                document.getElementById('contact-modal').classList.add('hidden');
-                document.body.style.overflow = 'auto';
-            }
-        });
     </script>
 </body>
 </html>
