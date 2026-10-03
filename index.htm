@@ -3,361 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mayur Ravindra | Java Backend Engineer</title>
+    <meta name="theme-color" content="#0b0c0e">
+    <meta name="description" content="Mayur Ravindra is a full-stack engineer in Mumbai, India, building web products and reliable services for financial services and SaaS.">
+    <title>Mayur Ravindra — Full-Stack Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg: #050505;
-            --card: rgba(18, 18, 18, 0.7);
-            --border: rgba(255, 255, 255, 0.08);
-            --accent: #ffffff;
-        }
-
-        body {
-            background-color: var(--bg);
-            color: var(--accent);
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            -webkit-font-smoothing: antialiased;
-        }
-
+        :root { color-scheme: dark; --bg: #0b0c0e; --panel: #121417; --line: #292c31; --muted: #b0b5bd; --accent: #c9f27a; }
+        * { box-sizing: border-box; }
+        body { background: var(--bg); color: #f4f5f6; font-family: 'Plus Jakarta Sans', sans-serif; -webkit-font-smoothing: antialiased; }
         .serif { font-family: 'Instrument Serif', serif; }
         .mono { font-family: 'JetBrains Mono', monospace; }
-
-        .glass {
-            background: var(--card);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--border);
-        }
-
-        .bento-card {
-            border-radius: 24px;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.2, 1, 0.3, 1);
-            position: relative;
-        }
-
-        .bento-card:hover {
-            border-color: rgba(255, 255, 255, 0.15);
-            transform: translateY(-2px);
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(15px);
-            transition: all 0.6s cubic-bezier(0.2, 1, 0.3, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .pulse-dot {
-            width: 8px;
-            height: 8px;
-            background: #4ade80;
-            border-radius: 50%;
-            box-shadow: 0 0 10px rgba(74, 222, 128, 0.6);
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(0.95); opacity: 0.8; }
-            50% { transform: scale(1.1); opacity: 1; }
-            100% { transform: scale(0.95); opacity: 0.8; }
-        }
-
-        .animate-scroll {
-            animation: scroll 40s linear infinite;
-        }
-
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        .nav-link.active {
-            color: white;
-            background: rgba(255, 255, 255, 0.05);
-        }
+        .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 1.25rem; }
+        .eyebrow { color: var(--muted); font: 500 .72rem/1.5 'JetBrains Mono', monospace; letter-spacing: .08em; text-transform: uppercase; }
+        a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+        @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
     </style>
 </head>
-<body class="selection:bg-white selection:text-black">
-
-    <!-- Navbar -->
-    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-lg">
-        <div class="glass px-2 py-2 rounded-full flex justify-between items-center shadow-2xl">
-            <div class="ml-4 font-bold tracking-tighter mono text-[10px]">MAYUR<span class="text-zinc-600">.ENG</span></div>
-            <div class="flex gap-1 text-[10px] font-bold uppercase tracking-widest">
-                <button data-target="work" class="nav-link px-4 py-2 hover:text-white text-zinc-500 transition-all rounded-full">Work</button>
-                <button data-target="bio" class="nav-link px-4 py-2 hover:text-white text-zinc-500 transition-all rounded-full">Bio</button>
-                <button data-target="interests" class="nav-link px-4 py-2 hover:text-white text-zinc-500 transition-all rounded-full">Personal</button>
-                <button onclick="toggleModal()" class="px-5 py-2 bg-white text-black rounded-full hover:bg-zinc-200 transition-all ml-2">Contact</button>
+<body class="selection:bg-lime-200 selection:text-black">
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:bg-lime-200 focus:px-4 focus:py-3 focus:text-black">Skip to content</a>
+    <nav aria-label="Main navigation" class="fixed left-1/2 top-4 z-50 w-[calc(100%-2rem)] max-w-3xl -translate-x-1/2">
+        <div class="flex items-center justify-between rounded-full border border-white/10 bg-[#111315]/95 px-4 py-2 shadow-xl backdrop-blur">
+            <a href="#home" class="mono text-sm font-medium tracking-tight" aria-label="Mayur Ravindra, home">MAYUR<span class="text-lime-200">.</span></a>
+            <div class="flex items-center gap-1 text-sm">
+                <a href="#work" class="rounded-full px-3 py-2 text-zinc-300 hover:text-white">Work</a>
+                <a href="#about" class="hidden rounded-full px-3 py-2 text-zinc-300 hover:text-white sm:inline-block">About</a>
+                <a href="#contact" class="rounded-full bg-lime-200 px-4 py-2 font-semibold text-zinc-950 hover:bg-lime-100">Contact</a>
             </div>
         </div>
     </nav>
 
-    <div class="max-w-6xl mx-auto px-6 pt-32 pb-20">
-        
-        <!-- Hero -->
-        <header id="home" class="mb-24 reveal">
-            <div class="flex items-center gap-3 mb-6">
-                <div class="pulse-dot"></div>
-                <span class="mono text-[10px] text-zinc-500 uppercase tracking-widest"> Software Engineer. // Mumbai, India</span>
+    <main id="main" class="mx-auto max-w-5xl px-5 pb-16 pt-32 sm:px-8">
+        <header id="home" class="mb-24 max-w-4xl">
+            <p class="eyebrow mb-6"><span class="mr-2 inline-block h-2 w-2 rounded-full bg-lime-300" aria-hidden="true"></span>Full-stack engineer · Mumbai, India</p>
+            <h1 class="serif mb-7 text-6xl leading-[.92] tracking-tight sm:text-8xl md:text-9xl">I build useful<br><span class="italic text-zinc-500">products end to end.</span></h1>
+            <p class="max-w-2xl text-lg leading-8 text-zinc-300 sm:text-xl">I’m Mayur Ravindra, a full-stack engineer who works across web interfaces, application services, and the systems behind them.</p>
+            <p class="mt-3 max-w-2xl text-base leading-7 text-zinc-400">Nearly a decade across financial services and SaaS, from shaping backend services to building clear, practical experiences for the people who use them.</p>
+            <div class="mt-8 flex flex-wrap gap-3">
+                <a href="#work" class="rounded-full bg-lime-200 px-5 py-3 text-sm font-semibold text-zinc-950 hover:bg-lime-100">Explore selected work <span aria-hidden="true">↓</span></a>
+                <a href="mailto:mayurravindram@gmail.com" class="rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-white hover:border-white/50">Email me</a>
             </div>
-            <h1 class="text-6xl md:text-[110px] serif italic leading-[0.8] mb-8 tracking-tighter">
-                Mayur <br>
-                <span class="text-zinc-700">Ravindra.</span>
-            </h1>
-            <p class="text-lg md:text-xl text-zinc-400 max-w-2xl leading-relaxed font-light">
-                Java Backend Engineer with nearly a decade of experience building scalable enterprise solutions. Specializing in Spring Boot, Microservices, and Cloud infrastructure.
-            </p>
         </header>
 
-        <!-- Bento Grid -->
-        <main class="grid grid-cols-1 md:grid-cols-4 gap-4">
-            
-            <!-- Bio Section -->
-            <div id="bio" class="bento-card glass p-8 col-span-1 md:col-span-2 row-span-1 flex flex-col justify-between reveal">
-                <div class="flex justify-between items-start mb-12">
-                    <span class="mono text-[10px] text-zinc-600 uppercase">Identity_01</span>
-                    <div class="w-10 h-10 rounded-xl bg-zinc-800 flex items-center justify-center mono text-xs text-white">MR</div>
-                </div>
-                <div>
-                    <h2 class="text-2xl font-medium mb-4">Engineer, Father, Minimalist.</h2>
-                    <p class="text-sm text-zinc-500 leading-relaxed">
-                        Based in Mumbai, I balance a rigorous technical career with a focus on family and personal growth. I believe in clean code, practical architecture, and removing unnecessary complexity from both software and life.
-                    </p>
-                </div>
+        <section id="work" aria-labelledby="work-heading" class="mb-24 scroll-mt-28">
+            <div class="mb-7 flex flex-wrap items-end justify-between gap-3">
+                <div><p class="eyebrow mb-2">Selected work</p><h2 id="work-heading" class="serif text-4xl sm:text-5xl">Built with teams, made for people.</h2></div>
+                <p class="max-w-sm text-sm leading-6 text-zinc-400">A few examples from client engagements. Names and details are kept general where work is confidential.</p>
             </div>
+            <div class="grid gap-4 lg:grid-cols-2">
+                <a href="projects/banking-services/index.htm" class="panel block p-6 transition hover:border-lime-200/40 sm:p-8">
+                    <div class="mb-8 flex items-center justify-between gap-3"><span class="eyebrow">Client delivery · Financial services</span><span class="rounded-full border border-lime-200/30 px-3 py-1 text-xs text-lime-200">Delivered</span></div>
+                    <h3 class="mb-3 text-2xl font-semibold">Banking services modernization</h3>
+                    <p class="mb-6 text-base leading-7 text-zinc-300">Backend engineering for UK banking products, including services built with Java, Spring Boot, and Google Cloud Platform.</p>
+                    <dl class="grid gap-4 border-t border-white/10 pt-5 sm:grid-cols-2">
+                        <div><dt class="eyebrow mb-1">My contribution</dt><dd class="text-sm leading-6 text-zinc-300">Led backend development and helped shape service architecture.</dd></div>
+                        <div><dt class="eyebrow mb-1">Tools</dt><dd class="text-sm leading-6 text-zinc-300">Java 17 · Spring Boot · GCP</dd></div>
+                    </dl>
+                    <span class="mt-5 inline-block text-sm text-lime-200">Read case study <span aria-hidden="true">→</span></span>
+                </a>
+                <a href="projects/reconciliation-platform/index.htm" class="panel block p-6 transition hover:border-lime-200/40 sm:p-8">
+                    <div class="mb-8 flex items-center justify-between gap-3"><span class="eyebrow">Client delivery · Payments</span><span class="rounded-full border border-lime-200/30 px-3 py-1 text-xs text-lime-200">Delivered</span></div>
+                    <h3 class="mb-3 text-2xl font-semibold">Multi-tenant reconciliation platform</h3>
+                    <p class="mb-6 text-base leading-7 text-zinc-300">A SaaS payment reconciliation suite designed to support multiple tenants and operational workflows.</p>
+                    <dl class="grid gap-4 border-t border-white/10 pt-5 sm:grid-cols-2">
+                        <div><dt class="eyebrow mb-1">My contribution</dt><dd class="text-sm leading-6 text-zinc-300">Developed backend capabilities for the platform and its reconciliation workflows.</dd></div>
+                        <div><dt class="eyebrow mb-1">Tools</dt><dd class="text-sm leading-6 text-zinc-300">Java · MongoDB · Kubernetes</dd></div>
+                    </dl>
+                    <span class="mt-5 inline-block text-sm text-lime-200">Read case study <span aria-hidden="true">→</span></span>
+                </a>
+                <a href="projects/payment-processing/index.htm" class="panel block p-6 transition hover:border-lime-200/40 sm:p-8 lg:col-span-2">
+                    <div class="mb-8 flex items-center justify-between gap-3"><span class="eyebrow">Client delivery · Retirement & brokerage</span><span class="rounded-full border border-lime-200/30 px-3 py-1 text-xs text-lime-200">Delivered</span></div>
+                    <h3 class="mb-3 text-2xl font-semibold">Internal payment processing</h3>
+                    <p class="mb-6 max-w-3xl text-base leading-7 text-zinc-300">Contributed to internal payment platforms supporting brokerage and retirement products, with batch processing and service-based systems.</p>
+                    <dl class="grid gap-4 border-t border-white/10 pt-5 sm:grid-cols-2">
+                        <div><dt class="eyebrow mb-1">My contribution</dt><dd class="text-sm leading-6 text-zinc-300">Engineered payment platform components and backend services.</dd></div>
+                        <div><dt class="eyebrow mb-1">Tools</dt><dd class="text-sm leading-6 text-zinc-300">Java · Spring Batch · Microservices</dd></div>
+                    </dl>
+                    <span class="mt-5 inline-block text-sm text-lime-200">Read case study <span aria-hidden="true">→</span></span>
+                </a>
+            </div>
+            <p class="mt-4 text-sm leading-6 text-zinc-500">Client work is summarized at a high level. Specific outcomes, screenshots, and architecture details can be shared only where permitted.</p>
+        </section>
 
-            <!-- Professional Resume Section -->
-            <div id="work" class="bento-card glass p-8 col-span-1 md:col-span-2 row-span-2 reveal">
-                <div class="flex justify-between items-start mb-8">
-                    <span class="mono text-[10px] text-zinc-600 uppercase">Professional_Experience</span>
-                </div>
-                <div class="space-y-8">
-                    <div>
-                        <div class="flex justify-between items-end mb-1">
-                            <h3 class="text-sm font-bold">Coforge</h3>
-                            <span class="mono text-[9px] text-zinc-600 uppercase">2025 - Present</span>
-                        </div>
-                        <p class="text-[11px] text-zinc-400 mb-2">Sr. Technical Lead</p>
-                        <p class="text-[11px] text-zinc-500 leading-relaxed">Enginnering and development for UK based Banco Santander. JDK 17, SpringBoot 4, Openshift.</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-end mb-1">
-                            <h3 class="text-sm font-bold">Publicis Sapient</h3>
-                            <span class="mono text-[9px] text-zinc-600 uppercase">2022 — 2025</span>
-                        </div>
-                        <p class="text-[11px] text-zinc-400 mb-2">Associate Sr. Software Developer</p>
-                        <p class="text-[11px] text-zinc-500 leading-relaxed">Leading backend development for UK banking products (Lloyds Banking Group). Architecting services using Java 17, Spring Boot 3.0, and GCP.</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-end mb-1">
-                            <h3 class="text-sm font-bold">Opus Consulting</h3>
-                            <span class="mono text-[9px] text-zinc-600 uppercase">2021 — 2022</span>
-                        </div>
-                        <p class="text-[11px] text-zinc-400 mb-2">Sr. Technical Engineer</p>
-                        <p class="text-[11px] text-zinc-500 leading-relaxed">Developed SaaS multi-tenant payment reconciliation suites using Java 8, MongoDB, and Kubernetes.</p>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-end mb-1">
-                            <h3 class="text-sm font-bold">TIAA India</h3>
-                            <span class="mono text-[9px] text-zinc-600 uppercase">2017 — 2021</span>
-                        </div>
-                        <p class="text-[11px] text-zinc-400 mb-2">Analyst Software Developer</p>
-                        <p class="text-[11px] text-zinc-500 leading-relaxed">Engineered internal payment platforms for brokerage and retirement products using Spring Batch and microservices.</p>
-                    </div>
-                </div>
+        <section aria-labelledby="projects-heading" class="mb-24 scroll-mt-28">
+            <div class="mb-7"><p class="eyebrow mb-2">Independent projects</p><h2 id="projects-heading" class="serif text-4xl sm:text-5xl">On my own workbench.</h2><p class="mt-3 max-w-2xl text-base leading-7 text-zinc-400">Personal builds at different stages. I’ll share demos and source when they’re ready to show.</p></div>
+            <div class="grid gap-4 sm:grid-cols-2">
+                <a href="projects/family-hearth/index.htm" class="panel block p-6 transition hover:border-lime-200/40"><div class="mb-5 flex items-center justify-between"><span class="eyebrow">Personal project</span><span class="text-xs text-amber-200">In progress</span></div><h3 class="mb-2 text-xl font-semibold">Family Hearth</h3><p class="text-sm leading-6 text-zinc-300">A private social space for families to share updates and stay connected.</p><span class="mt-5 inline-block text-sm text-lime-200">View project <span aria-hidden="true">→</span></span></a>
+                <a href="projects/eggspress/index.htm" class="panel block p-6 transition hover:border-lime-200/40"><div class="mb-5 flex items-center justify-between"><span class="eyebrow">Personal project</span><span class="text-xs text-amber-200">In progress</span></div><h3 class="mb-2 text-xl font-semibold">Eggspress</h3><p class="text-sm leading-6 text-zinc-300">A poultry pre-order concept for connecting orders with local delivery.</p><span class="mt-5 inline-block text-sm text-lime-200">View project <span aria-hidden="true">→</span></span></a>
+                <a href="projects/medusa-storefront/index.htm" class="panel block p-6 transition hover:border-lime-200/40"><div class="mb-5 flex items-center justify-between"><span class="eyebrow">Personal project</span><span class="text-xs text-amber-200">In progress</span></div><h3 class="mb-2 text-xl font-semibold">Medusa Storefront</h3><p class="text-sm leading-6 text-zinc-300">A headless commerce storefront exploring the Medusa platform.</p><span class="mt-5 inline-block text-sm text-lime-200">View project <span aria-hidden="true">→</span></span></a>
+                <a href="projects/mock-utilities/index.htm" class="panel block p-6 transition hover:border-lime-200/40"><div class="mb-5 flex items-center justify-between"><span class="eyebrow">Personal project</span><span class="text-xs text-amber-200">In progress</span></div><h3 class="mb-2 text-xl font-semibold">Mock Utilities</h3><p class="text-sm leading-6 text-zinc-300">Utilities for creating and testing API mocks during development.</p><span class="mt-5 inline-block text-sm text-lime-200">View project <span aria-hidden="true">→</span></span></a>
             </div>
+        </section>
 
-            <!-- Personal Projects Group -->
-            <div class="bento-card glass p-8 col-span-1 md:col-span-2 reveal">
-                <span class="mono text-[10px] text-zinc-600 uppercase mb-8 block">Project_Archive</span>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div class="group cursor-pointer">
-                        <h4 class="text-xs font-bold mb-1 group-hover:text-zinc-400 transition-colors">Family Hearth</h4>
-                        <p class="text-[10px] text-zinc-500">Private social network for family units.</p>
-                    </div>
-                    <div class="group cursor-pointer">
-                        <h4 class="text-xs font-bold mb-1 group-hover:text-zinc-400 transition-colors">Eggspress</h4>
-                        <p class="text-[10px] text-zinc-500">Logistics app for poultry pre-orders.</p>
-                    </div>
-                    <div class="group cursor-pointer">
-                        <h4 class="text-xs font-bold mb-1 group-hover:text-zinc-400 transition-colors">Medusa Storefront</h4>
-                        <p class="text-[10px] text-zinc-500">Headless e-commerce implementation.</p>
-                    </div>
-                    <div class="group cursor-pointer">
-                        <h4 class="text-xs font-bold mb-1 group-hover:text-zinc-400 transition-colors">Mock Utilities</h4>
-                        <p class="text-[10px] text-zinc-500">API prototyping tools for devs.</p>
-                    </div>
-                </div>
-            </div>
+        <section id="about" aria-labelledby="about-heading" class="mb-24 grid gap-4 scroll-mt-28 lg:grid-cols-5">
+            <div class="panel p-6 sm:p-8 lg:col-span-3"><p class="eyebrow mb-2">A little context</p><h2 id="about-heading" class="serif mb-5 text-4xl">Practical by default.</h2><p class="max-w-2xl text-base leading-7 text-zinc-300">I’m a full-stack engineer based in Mumbai. I enjoy turning complicated requirements into useful interfaces and dependable services that are easier for people to use and teams to operate. Outside work, I’m into long-distance riding, books, and space exploration.</p></div>
+            <div class="panel p-6 sm:p-8 lg:col-span-2"><p class="eyebrow mb-5">Experience</p><ol class="space-y-5">
+                <li><div class="flex items-baseline justify-between gap-3"><h3 class="font-semibold">Coforge</h3><span class="mono text-xs text-zinc-400">2025—now</span></div><p class="mt-1 text-sm text-zinc-300">Senior Technical Lead · Banking</p></li>
+                <li><div class="flex items-baseline justify-between gap-3"><h3 class="font-semibold">Publicis Sapient</h3><span class="mono text-xs text-zinc-400">2022—2025</span></div><p class="mt-1 text-sm text-zinc-300">Associate Senior Software Developer</p></li>
+                <li><div class="flex items-baseline justify-between gap-3"><h3 class="font-semibold">Opus Consulting</h3><span class="mono text-xs text-zinc-400">2021—2022</span></div><p class="mt-1 text-sm text-zinc-300">Senior Technical Engineer</p></li>
+                <li><div class="flex items-baseline justify-between gap-3"><h3 class="font-semibold">TIAA India</h3><span class="mono text-xs text-zinc-400">2017—2021</span></div><p class="mt-1 text-sm text-zinc-300">Analyst Software Developer</p></li>
+            </ol></div>
+        </section>
 
-            <!-- Interests Section -->
-            <div id="interests" class="bento-card glass p-8 col-span-1 md:col-span-1 reveal flex flex-col justify-between">
-                <span class="mono text-[10px] text-zinc-600 uppercase">Interests</span>
-                <div class="mt-6 space-y-4">
-                    <div class="flex items-center gap-3">
-                        <span class="text-lg">🏍️</span>
-                        <span class="text-[11px] font-medium">Long Distance Riding</span>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <span class="text-lg">📚</span>
-                        <span class="text-[11px] font-medium">Philosophy & Tech Lit</span>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <span class="text-lg">🌌</span>
-                        <span class="text-[11px] font-medium">Space Exploration</span>
-                    </div>
-                </div>
-            </div>
+        <section id="contact" aria-labelledby="contact-heading" class="scroll-mt-28 rounded-3xl bg-lime-200 p-7 text-zinc-950 sm:p-10">
+            <p class="eyebrow !text-zinc-700">Get in touch</p><div class="mt-2 flex flex-col justify-between gap-6 sm:flex-row sm:items-end"><div><h2 id="contact-heading" class="serif text-5xl sm:text-6xl">Have a good problem?</h2><p class="mt-3 max-w-xl text-base leading-7 text-zinc-800">For full-stack engineering, collaboration, or a quick conversation, email is the easiest way to reach me.</p></div><a href="mailto:mayurravindram@gmail.com" class="inline-flex shrink-0 items-center justify-center rounded-full bg-zinc-950 px-6 py-3 text-sm font-semibold text-white hover:bg-zinc-800">Email Mayur <span class="ml-2" aria-hidden="true">↗</span></a></div>
+            <a class="mt-6 inline-block text-sm font-medium underline underline-offset-4" href="mailto:mayurravindram@gmail.com">mayurravindram@gmail.com</a>
+        </section>
 
-            <!-- Culture Section (Movies/Series) -->
-            <div class="bento-card glass p-8 col-span-1 md:col-span-1 reveal flex flex-col justify-between bg-zinc-900/30">
-                <span class="mono text-[10px] text-zinc-600 uppercase">Culture</span>
-                <div class="space-y-2 mt-4">
-                    <p class="text-[11px] mono text-zinc-400">01_STAR_WARS</p>
-                    <p class="text-[11px] mono text-zinc-400">02_THE_MATRIX</p>
-                    <p class="text-[11px] mono text-zinc-400">03_BREAKING_BAD</p>
-                </div>
-            </div>
-
-            <!-- Tech Stack Marquee -->
-            <div class="bento-card glass col-span-1 md:col-span-2 overflow-hidden flex items-center reveal h-20">
-                <div class="flex animate-scroll whitespace-nowrap px-4">
-                    <div class="flex gap-12 items-center mono text-[10px] uppercase text-zinc-600">
-                        <span>Java_17</span>
-                        <span class="text-white">Spring_Boot</span>
-                        <span>Microservices</span>
-                        <span class="text-white">Docker_K8s</span>
-                        <span>GCP_Cloud</span>
-                        <span class="text-white">MongoDB_MySQL</span>
-                        <span>React_Tailwind</span>
-                        <!-- Duplicate for loop -->
-                        <span>Java_17</span>
-                        <span class="text-white">Spring_Boot</span>
-                        <span>Microservices</span>
-                        <span class="text-white">Docker_K8s</span>
-                        <span>GCP_Cloud</span>
-                        <span class="text-white">MongoDB_MySQL</span>
-                        <span>React_Tailwind</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Contact Section -->
-            <div id="contact" class="bento-card bg-white col-span-1 md:col-span-2 p-10 reveal flex flex-col md:flex-row items-center justify-between group cursor-pointer" onclick="toggleModal()">
-                <div class="text-black mb-6 md:mb-0">
-                    <h4 class="text-4xl serif italic leading-none mb-2 tracking-tighter">Initialize project?</h4>
-                    <p class="text-zinc-500 mono text-[10px] font-bold uppercase">mayurravindram@gmail.com</p>
-                </div>
-                <div class="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center group-hover:rotate-45 transition-all">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                </div>
-            </div>
-
-        </main>
-
-        <footer class="mt-40 py-10 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="mono text-[9px] text-zinc-700 tracking-[0.3em]">
-                &copy; 2026 MAYUR RAVINDRA // SYSTEMS ARCHITECT
-            </div>
-            <div class="flex gap-10">
-                <a href="https://linkedin.com/in/mayurravindram" class="mono text-[9px] text-zinc-500 hover:text-white transition-colors uppercase">LinkedIn</a>
-                <a href="https://github.com/mayurravindram" class="mono text-[9px] text-zinc-500 hover:text-white transition-colors uppercase">GitHub</a>
-                <button class="mono text-[9px] text-zinc-500 hover:text-white transition-colors uppercase" onclick="copyEmail()">Copy_Mail</button>
-            </div>
+        <footer class="mt-10 flex flex-col justify-between gap-4 border-t border-white/10 py-7 text-sm text-zinc-400 sm:flex-row sm:items-center">
+            <p>© <span id="year">2026</span> Mayur Ravindra · Mumbai, India</p>
+            <div class="flex gap-6"><a href="https://linkedin.com/in/mayurravindram" target="_blank" rel="noopener noreferrer" class="underline decoration-white/30 underline-offset-4 hover:text-white">LinkedIn <span class="sr-only">(opens in a new tab)</span></a><a href="https://github.com/mayurravindram" target="_blank" rel="noopener noreferrer" class="underline decoration-white/30 underline-offset-4 hover:text-white">GitHub <span class="sr-only">(opens in a new tab)</span></a></div>
         </footer>
-    </div>
-
-    <!-- Contact Modal -->
-    <div id="contact-modal" class="fixed inset-0 z-[100] hidden">
-        <div class="absolute inset-0 bg-black/80 backdrop-blur-3xl" onclick="toggleModal()"></div>
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-lg p-6">
-            <div class="glass p-10 rounded-[40px] shadow-2xl animate-in fade-in zoom-in duration-500">
-                <div class="flex justify-between items-start mb-10">
-                    <div>
-                        <span class="mono text-[10px] text-zinc-500 uppercase block mb-1">Packet_Transmission</span>
-                        <h2 class="text-5xl serif italic">Connect.</h2>
-                    </div>
-                    <button onclick="toggleModal()" class="text-zinc-500 hover:text-white">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                    </button>
-                </div>
-                <form class="space-y-3">
-                    <input type="text" placeholder="NAME_IDENTIFIER" class="mono bg-white/5 border border-white/10 p-4 rounded-2xl w-full text-[10px] focus:outline-none focus:border-white/30 transition-colors uppercase">
-                    <input type="email" placeholder="EMAIL_ADDR" class="mono bg-white/5 border border-white/10 p-4 rounded-2xl w-full text-[10px] focus:outline-none focus:border-white/30 transition-colors uppercase">
-                    <textarea placeholder="PROJECT_QUERY..." rows="4" class="mono bg-white/5 border border-white/10 p-4 rounded-2xl w-full text-[10px] focus:outline-none focus:border-white/30 transition-colors uppercase"></textarea>
-                    <button type="submit" class="w-full bg-white text-black py-4 rounded-full font-bold hover:bg-zinc-200 transition-all mono text-xs uppercase">Submit_Packet</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Smooth Scroll Logic
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', (e) => {
-                const targetId = link.getAttribute('data-target');
-                const targetElement = document.getElementById(targetId);
-                
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 120,
-                        behavior: 'smooth'
-                    });
-                    
-                    document.querySelectorAll('.nav-link').forEach(btn => btn.classList.remove('active'));
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Entrance Reveal Observer
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-        // Modal Logic
-        function toggleModal() {
-            const modal = document.getElementById('contact-modal');
-            const isHidden = modal.classList.contains('hidden');
-            modal.classList.toggle('hidden');
-            document.body.style.overflow = isHidden ? 'hidden' : 'auto';
-        }
-
-        // Copy Email Logic
-        function copyEmail() {
-            const email = "mayurravindram@gmail.com";
-            const el = document.createElement('textarea');
-            el.value = email;
-            document.body.appendChild(el);
-            el.select();
-            document.execCommand('copy');
-            document.body.removeChild(el);
-            
-            const btn = event.target;
-            const originalText = btn.innerText;
-            btn.innerText = "COPIED_LOG";
-            btn.classList.add('text-white');
-            setTimeout(() => {
-                btn.innerText = originalText;
-                btn.classList.remove('text-white');
-            }, 2000);
-        }
-    </script>
+    </main>
 </body>
 </html>
-
